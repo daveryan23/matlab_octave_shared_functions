@@ -18,6 +18,7 @@
     - projects
       - <project_name>
     - shared
+    
 After creating the directory structure above, synchronise this repo into the 'shared' directory above. The advantage of this structure is it allows shared functions to be reused between different Octave projects, and the large data files to be stored outside of the projects, enabling each project to be small and synced to GitHub separately.
 
 ## What I did
