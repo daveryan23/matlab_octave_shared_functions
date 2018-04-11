@@ -19,11 +19,10 @@
 ## @seealso{}
 ## @end deftypefn
 
-## Author: David Ryan <davidryan@David-Ryans-MacBook-Air.local>
+## Author: David Ryan
 ## Created: 2016-11-02
 
-function [retval] = waveformTrapezium (vector1)
-
+function [retval] = waveformTrapeziumBasic (vector1)
 
 % Trapezium wave sloping 1/4 of the time (1 of time for triangle, 0 for square)
 retval = max(-1,min(1,4.*waveformTriangle(vector1)));
