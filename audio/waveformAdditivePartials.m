@@ -97,7 +97,7 @@ else
     retval =  waveformTriangle(timeVect*relFreqVect')*relAmpVect;    
   elseif voiceType==4
     % Use trapezium
-    retval =  waveformTrapezium(timeVect*relFreqVect')*relAmpVect;    
+    retval =  waveformTrapeziumBasic(timeVect*relFreqVect')*relAmpVect;    
   elseif voiceType==5
     % Use square5
     retval =  waveform5Square(timeVect*relFreqVect')*relAmpVect;    

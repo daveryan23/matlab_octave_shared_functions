@@ -1,4 +1,4 @@
-## Copyright (C) 2016 David Ryan
+## Copyright (C) 2017 David Ryan
 ## 
 ## This program is free software; you can redistribute it and/or modify it
 ## under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 ## @seealso{}
 ## @end deftypefn
 
-## Author: David Ryan <davidryan@David-Ryans-MacBook-Air.local>
+## Author: David Ryan
 ## Created: 2017-05-03
 
 function [retval] = filterFromSetpoints (waveform, sampleFreq, setpointMx)
@@ -71,10 +71,6 @@ else
   fwaveM = zeros(0,1);           % Empty if lenWave is odd. Single value if its even.
 endif
 lenWave2 = length(fwaveVect2);
-
-% Get rid of zero and Nyquist components
-fwave0 = 0 * fwave0;             % Force the time-average to zero
-fwaveM = 0 * fwaveM;             % Filter out the Nyquist frequency, if it exists
 
 % Get frequency increment, frequency vector, pitch vector
 freqInc = sampleFreq./lenWave;           % Each increment in FFT range represents this range of frequencies
@@ -160,7 +156,19 @@ endfor
 
 % Alter fwaveVect2 amplitudes based on dBVect
 ampVect = 10.^(dBVect./20);
-fwaveVect2 = ampVect.*fwaveVect2;
+fwaveVect2 = fwaveVect2 .* ampVect;
+
+
+% Deal with zero and Nyquist components
+
+%% Previous version (pre Apr 2018)
+%fwave0 = 0 * fwave0;             % Force the time-average to zero
+%fwaveM = 0 * fwaveM;             % Filter out the Nyquist frequency, if it exists
+
+% New version
+fwave0 = fwave0 * ampVect(1);
+fwaveM = fwaveM * ampVect(end);
+
 
 % Reconstruct signal from altered fwaveVect2
 retval = real(ifft([fwave0;fwaveVect2;fwaveM;conj(fwaveVect2(end:-1:1))]));

@@ -19,10 +19,12 @@
 ## @seealso{}
 ## @end deftypefn
 
-## Author: David Ryan <davidryan@David-Ryans-MacBook-Air.local>
+## Author: David Ryan
 ## Created: 2016-11-02
 
 function [retval] = average3point (vector1)
+
+% IMPROVE: Make this function work for row vectors as well as column vectors
 
 % Force to column, slightly extend
 vector2 = [vector1(1);vector1(:);vector1(end)];
