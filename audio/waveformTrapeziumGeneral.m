@@ -1,3 +1,6 @@
+## Author: David Ryan
+## Created: 2018-01-01
+
 function [retval] = waveformTrapeziumGeneral (timeV, pulseDbV, squareDbV, sawtoothDbV, triangleDbV)
   
   % timeV: Vector of discrete times to sample trapezium wave at
@@ -106,14 +109,3 @@ function [retval] = waveformTrapeziumGeneral (timeV, pulseDbV, squareDbV, sawtoo
   endif
 
 endfunction
-
-
-
-
-
-
-
-
-
-
-

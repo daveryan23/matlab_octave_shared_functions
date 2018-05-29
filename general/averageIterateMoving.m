@@ -1,8 +1,7 @@
 ## Author: David Ryan
 ## Created: 2018-05-28
 
-
-function [retval] = averageIterateMoving(vector1, points1, iterations)
+function [retval] = averageIterateMoving(vectorToAverage, numberOfPoints, iterations)
   
   % iterations:
   % 0 is zero interpolation
@@ -16,11 +15,11 @@ function [retval] = averageIterateMoving(vector1, points1, iterations)
   iter = max(0,min(20,round(real(iterations(1)))));
   
   if iter < 0.5
-    retval = averageMoving(vector1,1);      % Call at least once, for consistent formatting
+    retval = averageMoving(vectorToAverage,1);      % Call at least once, for consistent formatting
   else
     retval = averageIterateMoving(
-      averageMoving(vector1, points1),
-      points1,
+      averageMoving(vectorToAverage, numberOfPoints),
+      numberOfPoints,
       iter - 1    
     );
   endif
