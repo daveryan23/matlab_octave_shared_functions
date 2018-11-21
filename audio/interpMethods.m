@@ -20,7 +20,7 @@ function [retval] = interpMethods(numberOfPoints, startValue, endValue, methodTy
   end1 = endValue(1);
   method1 = real(methodType(1));
   
-  if method1 >= 10
+  if and(method1 >= 10, method1 < 20)
     % Call function with different parameters to get the logarithmic version
     logStartValue = log(max(1e-6, abs(startValue)));
     logEndValue = log(max(1e-6, abs(endValue)));
