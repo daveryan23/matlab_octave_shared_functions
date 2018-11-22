@@ -1,25 +1,13 @@
 # Shared Functions in MATLAB / Octave
+- Functions shared between different projects
+- The sequencer project (separate repo) uses these functions
 
-## Scope of Project
-- These functions support the music sequencer project
-- However, they have been separated out for reuse across projects
-
-## Related GitHub repos
-- Shared functions: https://github.com/daveryan23/matlab_octave_shared_functions
-- Sequencer: https://github.com/daveryan23/music_sequencer_matlab_excel_audacity
-
-## Recommended directory structure
-- octave (or matlab! But octave is free...)
-  - data
-    - <project_name>
-      - input
-      - output
-  - src
-    - projects
-      - <project_name>
+## Recommended folder structure
+- (userhome)
+  - octave
     - shared
-    
-After creating the directory structure above, synchronise this repo into the 'shared' directory above. The advantage of this structure is it allows shared functions to be reused between different Octave projects, and the large data files to be stored outside of the projects, enabling each project to be small and synced to GitHub separately.
+
+Sync the repo to the shared folder given above.
 
 ## What I did
 - These functions have been developed across 2015-2018

@@ -1,5 +1,6 @@
-thisPath = '~/octave/01-code/shared';
+thisPath = '~/octave/shared';
 addpath([thisPath '/audio']);
 addpath([thisPath '/audio/deprecated']);
+addpath([thisPath '/averaging']);
+addpath([thisPath '/file']);
 addpath([thisPath '/general']);
-addpath([thisPath '/general/deprecated']);
